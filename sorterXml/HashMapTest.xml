@@ -1,0 +1,1331 @@
+<?xml version="1.0" encoding="UTF-8"?><epgListItem id="0">
+						<group inherited="false" label="" name="itemEvent" ro="false" template="EpgEvent" visualindex="0">
+							<editinginfo>
+								<parameter name="outline">false</parameter>
+								<parameter name="visible">true</parameter>
+								<parameter name="adminonly">false</parameter>
+								<parameter name="renderastab">false</parameter>
+								<parameter name="widget">Cosmos.SP.form.Group</parameter>
+								<parameter name="transparent">true</parameter>
+								<parameter name="direction">vertical</parameter>
+								<parameter name="description"/>
+								<parameter name="readonly">false</parameter>
+							</editinginfo>
+							<definition>
+								<group inherited="false" label="" name="group_id" ro="false" visualindex="0">
+									<editinginfo>
+										<parameter name="outline">false</parameter>
+										<parameter name="visible">true</parameter>
+										<parameter name="adminonly">false</parameter>
+										<parameter name="renderastab">false</parameter>
+										<parameter name="widget">Cosmos.SP.form.Group</parameter>
+										<parameter name="transparent">true</parameter>
+										<parameter name="direction">horizontal</parameter>
+										<parameter name="description"/>
+										<parameter name="readonly">false</parameter>
+									</editinginfo>
+									<definition>
+										<text inherited="false" label="" name="eventId" visualindex="0">
+											<value/>
+											<editinginfo>
+												<parameter name="description">ID Evento</parameter>
+												<parameter name="outline">false</parameter>
+												<parameter name="visible">true</parameter>
+												<parameter name="readonly">true</parameter>
+												<parameter name="adminonly">false</parameter>
+												<parameter name="required">false</parameter>
+												<parameter name="multilingual">false</parameter>
+												<parameter name="textOption">simple</parameter>
+												<parameter name="size">0</parameter>
+												<parameter name="widget">Cosmos.SP.form.Text</parameter>
+												<parameter name="graphicsize">0</parameter>
+												<parameter name="rowsnumber">1</parameter>
+												<parameter name="default"/>
+												<parameter name="enumeration"/>
+												<parameter name="regexp"/>
+												<parameter name="requirements"/>
+											</editinginfo>
+										</text>
+									</definition>
+								</group>
+								<group inherited="false" label="" name="date" ro="false" visualindex="1">
+									<editinginfo>
+										<parameter name="outline">false</parameter>
+										<parameter name="visible">true</parameter>
+										<parameter name="adminonly">false</parameter>
+										<parameter name="renderastab">false</parameter>
+										<parameter name="widget">Cosmos.SP.form.Group</parameter>
+										<parameter name="transparent">true</parameter>
+										<parameter name="direction">horizontal</parameter>
+										<parameter name="description"/>
+										<parameter name="readonly">false</parameter>
+									</editinginfo>
+									<definition>
+										<text inherited="false" label="" name="startTime" visualindex="0">
+											<value>01:00</value>
+											<editinginfo>
+												<parameter name="description">Ora inizio</parameter>
+												<parameter name="requirements">HH:MM</parameter>
+												<parameter name="outline">false</parameter>
+												<parameter name="visible">true</parameter>
+												<parameter name="readonly">false</parameter>
+												<parameter name="adminonly">false</parameter>
+												<parameter name="required">true</parameter>
+												<parameter name="multilingual">false</parameter>
+												<parameter name="textOption">simple</parameter>
+												<parameter name="regexp">^(([0-1]\d{1,1}|[2][0-3]):([0-5]\d{1,1})$)$</parameter>
+												<parameter name="size">0</parameter>
+												<parameter name="widget">Cosmos.SP.form.Text</parameter>
+												<parameter name="graphicsize">0</parameter>
+												<parameter name="rowsnumber">1</parameter>
+												<parameter name="default"/>
+												<parameter name="enumeration"/>
+											</editinginfo>
+										</text>
+										<text inherited="false" label="" name="endTime" visualindex="1">
+											<value>03:00</value>
+											<editinginfo>
+												<parameter name="description">Ora fine</parameter>
+												<parameter name="requirements">HH:MM</parameter>
+												<parameter name="outline">false</parameter>
+												<parameter name="visible">true</parameter>
+												<parameter name="readonly">false</parameter>
+												<parameter name="adminonly">false</parameter>
+												<parameter name="required">true</parameter>
+												<parameter name="multilingual">false</parameter>
+												<parameter name="textOption">simple</parameter>
+												<parameter name="regexp">^(([0-1]\d{1,1}|[2][0-3]):([0-5]\d{1,1})$)$</parameter>
+												<parameter name="size">0</parameter>
+												<parameter name="widget">Cosmos.SP.form.Text</parameter>
+												<parameter name="graphicsize">0</parameter>
+												<parameter name="rowsnumber">1</parameter>
+												<parameter name="default"/>
+												<parameter name="enumeration"/>
+											</editinginfo>
+										</text>
+									</definition>
+								</group>
+								<link hypergraphid="c43f7ccf-f2f9-4122-8ae0-410d2ccab89d" inherited="false" label="" name="epgTitle" to="EpgTitle" visualindex="2">
+									<value descr="" id="10" label="EpgTitle" linkedcontenttype="EpgTitle" newEnabled="true" ref="10" status="saved">
+										<active workflowid="2">
+											<transition category="show" name="preview" output="preview" postaction="none" title="Preview content" visualindex="5"/>
+											<transition category="read" name="view" output="get" postaction="none" title="Open content in viewing mode" visualindex="1"/>
+											<transition category="approvalFlow" name="submit" output="empty" postaction="loadsearchform" title="Submit content for approving" visualindex="6"/>
+											<transition category="edit" name="get" output="get" postaction="none" title="Open content in editing mode" visualindex="2"/>
+											<transition category="store" name="save" output="save" postaction="reload" title="Save content" visualindex="3"/>
+											<transition category="remove" name="delete" output="delete" postaction="loadsearchform" title="Delete content" visualindex="4"/>
+										</active>
+									</value>
+									<editinginfo>
+										<parameter name="description">Epg title</parameter>
+										<parameter name="outline">false</parameter>
+										<parameter name="visible">true</parameter>
+										<parameter name="readonly">false</parameter>
+										<parameter name="adminonly">false</parameter>
+										<parameter name="required">true</parameter>
+										<parameter name="deletepolicy">denydelete</parameter>
+										<parameter name="widget">TIM.EpgTitleLink</parameter>
+										<parameter name="autorefresh">false</parameter>
+										<parameter name="autorefreshtime">0</parameter>
+										<parameter name="shownew">false</parameter>
+										<parameter name="width">0</parameter>
+										<parameter name="longdescription">false</parameter>
+										<parameter name="newEnabled">true</parameter>
+										<parameter name="requirements"/>
+									</editinginfo>
+								</link>
+								<group inherited="false" label="" name="premiereLive" ro="false" visualindex="3">
+									<editinginfo>
+										<parameter name="outline">false</parameter>
+										<parameter name="visible">true</parameter>
+										<parameter name="adminonly">false</parameter>
+										<parameter name="renderastab">false</parameter>
+										<parameter name="widget">Cosmos.SP.form.Group</parameter>
+										<parameter name="transparent">true</parameter>
+										<parameter name="direction">horizontal</parameter>
+										<parameter name="description"/>
+										<parameter name="readonly">false</parameter>
+									</editinginfo>
+									<definition>
+										<bool inherited="false" label="" name="premiereFlag" visualindex="0">
+											<value>false</value>
+											<editinginfo>
+												<parameter name="description">Premiere</parameter>
+												<parameter name="outline">false</parameter>
+												<parameter name="visible">true</parameter>
+												<parameter name="readonly">false</parameter>
+												<parameter name="adminonly">false</parameter>
+												<parameter name="required">false</parameter>
+												<parameter name="default">false</parameter>
+												<parameter name="widget">Cosmos.SP.form.Bool</parameter>
+												<parameter name="requirements"/>
+											</editinginfo>
+										</bool>
+										<bool inherited="false" label="" name="liveFlag" visualindex="1">
+											<value>false</value>
+											<editinginfo>
+												<parameter name="description">Live</parameter>
+												<parameter name="outline">false</parameter>
+												<parameter name="visible">true</parameter>
+												<parameter name="readonly">false</parameter>
+												<parameter name="adminonly">false</parameter>
+												<parameter name="required">false</parameter>
+												<parameter name="default">false</parameter>
+												<parameter name="widget">Cosmos.SP.form.Bool</parameter>
+												<parameter name="requirements"/>
+											</editinginfo>
+										</bool>
+									</definition>
+								</group>
+								<group inherited="false" label="" name="flag" ro="false" visualindex="4">
+									<editinginfo>
+										<parameter name="outline">false</parameter>
+										<parameter name="visible">true</parameter>
+										<parameter name="adminonly">false</parameter>
+										<parameter name="renderastab">false</parameter>
+										<parameter name="widget">Cosmos.SP.form.Group</parameter>
+										<parameter name="transparent">true</parameter>
+										<parameter name="direction">horizontal</parameter>
+										<parameter name="description"/>
+										<parameter name="readonly">false</parameter>
+									</editinginfo>
+									<definition>
+										<bool inherited="false" label="" name="isRecordable" visualindex="0">
+											<value>false</value>
+											<editinginfo>
+												<parameter name="description">Recordable</parameter>
+												<parameter name="outline">false</parameter>
+												<parameter name="visible">true</parameter>
+												<parameter name="readonly">false</parameter>
+												<parameter name="adminonly">false</parameter>
+												<parameter name="required">false</parameter>
+												<parameter name="default">false</parameter>
+												<parameter name="widget">Cosmos.SP.form.Bool</parameter>
+												<parameter name="requirements"/>
+											</editinginfo>
+										</bool>
+										<bool inherited="false" label="" name="isStartover" visualindex="1">
+											<value>false</value>
+											<editinginfo>
+												<parameter name="description">Startover</parameter>
+												<parameter name="outline">false</parameter>
+												<parameter name="visible">true</parameter>
+												<parameter name="readonly">false</parameter>
+												<parameter name="adminonly">false</parameter>
+												<parameter name="required">false</parameter>
+												<parameter name="default">false</parameter>
+												<parameter name="widget">Cosmos.SP.form.Bool</parameter>
+												<parameter name="requirements"/>
+											</editinginfo>
+										</bool>
+										<bool inherited="false" label="" name="isCatchup" visualindex="2">
+											<value>false</value>
+											<editinginfo>
+												<parameter name="description">Catchup</parameter>
+												<parameter name="outline">false</parameter>
+												<parameter name="visible">true</parameter>
+												<parameter name="readonly">false</parameter>
+												<parameter name="adminonly">false</parameter>
+												<parameter name="required">false</parameter>
+												<parameter name="default">false</parameter>
+												<parameter name="widget">Cosmos.SP.form.Bool</parameter>
+												<parameter name="requirements"/>
+											</editinginfo>
+										</bool>
+										<bool inherited="false" label="" name="isTimeshift" visualindex="3">
+											<value>false</value>
+											<editinginfo>
+												<parameter name="description">Timeshift</parameter>
+												<parameter name="outline">false</parameter>
+												<parameter name="visible">true</parameter>
+												<parameter name="readonly">false</parameter>
+												<parameter name="adminonly">false</parameter>
+												<parameter name="required">false</parameter>
+												<parameter name="default">false</parameter>
+												<parameter name="widget">Cosmos.SP.form.Bool</parameter>
+												<parameter name="requirements"/>
+											</editinginfo>
+										</bool>
+									</definition>
+								</group>
+								<bool inherited="false" label="" name="deleted" visualindex="5">
+									<value>false</value>
+									<editinginfo>
+										<parameter name="description">Cancellato</parameter>
+										<parameter name="outline">false</parameter>
+										<parameter name="visible">true</parameter>
+										<parameter name="readonly">true</parameter>
+										<parameter name="adminonly">false</parameter>
+										<parameter name="required">false</parameter>
+										<parameter name="default">false</parameter>
+										<parameter name="widget">Cosmos.SP.form.Bool</parameter>
+										<parameter name="requirements"/>
+									</editinginfo>
+								</bool>
+							</definition>
+						</group>
+					</epgListItem><?xml version="1.0" encoding="UTF-8"?><epgListItem id="1">
+						<group inherited="false" label="" name="itemEvent" ro="false" template="EpgEvent" visualindex="0">
+							<editinginfo>
+								<parameter name="outline">false</parameter>
+								<parameter name="visible">true</parameter>
+								<parameter name="adminonly">false</parameter>
+								<parameter name="renderastab">false</parameter>
+								<parameter name="widget">Cosmos.SP.form.Group</parameter>
+								<parameter name="transparent">true</parameter>
+								<parameter name="direction">vertical</parameter>
+								<parameter name="description"/>
+								<parameter name="readonly">false</parameter>
+							</editinginfo>
+							<definition>
+								<group inherited="false" label="" name="group_id" ro="false" visualindex="0">
+									<editinginfo>
+										<parameter name="outline">false</parameter>
+										<parameter name="visible">true</parameter>
+										<parameter name="adminonly">false</parameter>
+										<parameter name="renderastab">false</parameter>
+										<parameter name="widget">Cosmos.SP.form.Group</parameter>
+										<parameter name="transparent">true</parameter>
+										<parameter name="direction">horizontal</parameter>
+										<parameter name="description"/>
+										<parameter name="readonly">false</parameter>
+									</editinginfo>
+									<definition>
+										<text inherited="false" label="" name="eventId" visualindex="0">
+											<value/>
+											<editinginfo>
+												<parameter name="description">ID Evento</parameter>
+												<parameter name="outline">false</parameter>
+												<parameter name="visible">true</parameter>
+												<parameter name="readonly">true</parameter>
+												<parameter name="adminonly">false</parameter>
+												<parameter name="required">false</parameter>
+												<parameter name="multilingual">false</parameter>
+												<parameter name="textOption">simple</parameter>
+												<parameter name="size">0</parameter>
+												<parameter name="widget">Cosmos.SP.form.Text</parameter>
+												<parameter name="graphicsize">0</parameter>
+												<parameter name="rowsnumber">1</parameter>
+												<parameter name="default"/>
+												<parameter name="enumeration"/>
+												<parameter name="regexp"/>
+												<parameter name="requirements"/>
+											</editinginfo>
+										</text>
+									</definition>
+								</group>
+								<group inherited="false" label="" name="date" ro="false" visualindex="1">
+									<editinginfo>
+										<parameter name="outline">false</parameter>
+										<parameter name="visible">true</parameter>
+										<parameter name="adminonly">false</parameter>
+										<parameter name="renderastab">false</parameter>
+										<parameter name="widget">Cosmos.SP.form.Group</parameter>
+										<parameter name="transparent">true</parameter>
+										<parameter name="direction">horizontal</parameter>
+										<parameter name="description"/>
+										<parameter name="readonly">false</parameter>
+									</editinginfo>
+									<definition>
+										<text inherited="false" label="" name="startTime" visualindex="0">
+											<value>16:00</value>
+											<editinginfo>
+												<parameter name="description">Ora inizio</parameter>
+												<parameter name="requirements">HH:MM</parameter>
+												<parameter name="outline">false</parameter>
+												<parameter name="visible">true</parameter>
+												<parameter name="readonly">false</parameter>
+												<parameter name="adminonly">false</parameter>
+												<parameter name="required">true</parameter>
+												<parameter name="multilingual">false</parameter>
+												<parameter name="textOption">simple</parameter>
+												<parameter name="regexp">^(([0-1]\d{1,1}|[2][0-3]):([0-5]\d{1,1})$)$</parameter>
+												<parameter name="size">0</parameter>
+												<parameter name="widget">Cosmos.SP.form.Text</parameter>
+												<parameter name="graphicsize">0</parameter>
+												<parameter name="rowsnumber">1</parameter>
+												<parameter name="default"/>
+												<parameter name="enumeration"/>
+											</editinginfo>
+										</text>
+										<text inherited="false" label="" name="endTime" visualindex="1">
+											<value>17:00</value>
+											<editinginfo>
+												<parameter name="description">Ora fine</parameter>
+												<parameter name="requirements">HH:MM</parameter>
+												<parameter name="outline">false</parameter>
+												<parameter name="visible">true</parameter>
+												<parameter name="readonly">false</parameter>
+												<parameter name="adminonly">false</parameter>
+												<parameter name="required">true</parameter>
+												<parameter name="multilingual">false</parameter>
+												<parameter name="textOption">simple</parameter>
+												<parameter name="regexp">^(([0-1]\d{1,1}|[2][0-3]):([0-5]\d{1,1})$)$</parameter>
+												<parameter name="size">0</parameter>
+												<parameter name="widget">Cosmos.SP.form.Text</parameter>
+												<parameter name="graphicsize">0</parameter>
+												<parameter name="rowsnumber">1</parameter>
+												<parameter name="default"/>
+												<parameter name="enumeration"/>
+											</editinginfo>
+										</text>
+									</definition>
+								</group>
+								<link hypergraphid="c43f7ccf-f2f9-4122-8ae0-410d2ccab89d" inherited="false" label="" name="epgTitle" to="EpgTitle" visualindex="2">
+									<value descr="" id="1" label="EpgTitle" linkedcontenttype="EpgTitle" newEnabled="true" ref="1" status="saved">
+										<active workflowid="2">
+											<transition category="show" name="preview" output="preview" postaction="none" title="Preview content" visualindex="5"/>
+											<transition category="read" name="view" output="get" postaction="none" title="Open content in viewing mode" visualindex="1"/>
+											<transition category="approvalFlow" name="submit" output="empty" postaction="loadsearchform" title="Submit content for approving" visualindex="6"/>
+											<transition category="edit" name="get" output="get" postaction="none" title="Open content in editing mode" visualindex="2"/>
+											<transition category="store" name="save" output="save" postaction="reload" title="Save content" visualindex="3"/>
+											<transition category="remove" name="delete" output="delete" postaction="loadsearchform" title="Delete content" visualindex="4"/>
+										</active>
+									</value>
+									<editinginfo>
+										<parameter name="description">Epg title</parameter>
+										<parameter name="outline">false</parameter>
+										<parameter name="visible">true</parameter>
+										<parameter name="readonly">false</parameter>
+										<parameter name="adminonly">false</parameter>
+										<parameter name="required">true</parameter>
+										<parameter name="deletepolicy">denydelete</parameter>
+										<parameter name="widget">TIM.EpgTitleLink</parameter>
+										<parameter name="autorefresh">false</parameter>
+										<parameter name="autorefreshtime">0</parameter>
+										<parameter name="shownew">false</parameter>
+										<parameter name="width">0</parameter>
+										<parameter name="longdescription">false</parameter>
+										<parameter name="newEnabled">true</parameter>
+										<parameter name="requirements"/>
+									</editinginfo>
+								</link>
+								<group inherited="false" label="" name="premiereLive" ro="false" visualindex="3">
+									<editinginfo>
+										<parameter name="outline">false</parameter>
+										<parameter name="visible">true</parameter>
+										<parameter name="adminonly">false</parameter>
+										<parameter name="renderastab">false</parameter>
+										<parameter name="widget">Cosmos.SP.form.Group</parameter>
+										<parameter name="transparent">true</parameter>
+										<parameter name="direction">horizontal</parameter>
+										<parameter name="description"/>
+										<parameter name="readonly">false</parameter>
+									</editinginfo>
+									<definition>
+										<bool inherited="false" label="" name="premiereFlag" visualindex="0">
+											<value>false</value>
+											<editinginfo>
+												<parameter name="description">Premiere</parameter>
+												<parameter name="outline">false</parameter>
+												<parameter name="visible">true</parameter>
+												<parameter name="readonly">false</parameter>
+												<parameter name="adminonly">false</parameter>
+												<parameter name="required">false</parameter>
+												<parameter name="default">false</parameter>
+												<parameter name="widget">Cosmos.SP.form.Bool</parameter>
+												<parameter name="requirements"/>
+											</editinginfo>
+										</bool>
+										<bool inherited="false" label="" name="liveFlag" visualindex="1">
+											<value>false</value>
+											<editinginfo>
+												<parameter name="description">Live</parameter>
+												<parameter name="outline">false</parameter>
+												<parameter name="visible">true</parameter>
+												<parameter name="readonly">false</parameter>
+												<parameter name="adminonly">false</parameter>
+												<parameter name="required">false</parameter>
+												<parameter name="default">false</parameter>
+												<parameter name="widget">Cosmos.SP.form.Bool</parameter>
+												<parameter name="requirements"/>
+											</editinginfo>
+										</bool>
+									</definition>
+								</group>
+								<group inherited="false" label="" name="flag" ro="false" visualindex="4">
+									<editinginfo>
+										<parameter name="outline">false</parameter>
+										<parameter name="visible">true</parameter>
+										<parameter name="adminonly">false</parameter>
+										<parameter name="renderastab">false</parameter>
+										<parameter name="widget">Cosmos.SP.form.Group</parameter>
+										<parameter name="transparent">true</parameter>
+										<parameter name="direction">horizontal</parameter>
+										<parameter name="description"/>
+										<parameter name="readonly">false</parameter>
+									</editinginfo>
+									<definition>
+										<bool inherited="false" label="" name="isRecordable" visualindex="0">
+											<value>false</value>
+											<editinginfo>
+												<parameter name="description">Recordable</parameter>
+												<parameter name="outline">false</parameter>
+												<parameter name="visible">true</parameter>
+												<parameter name="readonly">false</parameter>
+												<parameter name="adminonly">false</parameter>
+												<parameter name="required">false</parameter>
+												<parameter name="default">false</parameter>
+												<parameter name="widget">Cosmos.SP.form.Bool</parameter>
+												<parameter name="requirements"/>
+											</editinginfo>
+										</bool>
+										<bool inherited="false" label="" name="isStartover" visualindex="1">
+											<value>false</value>
+											<editinginfo>
+												<parameter name="description">Startover</parameter>
+												<parameter name="outline">false</parameter>
+												<parameter name="visible">true</parameter>
+												<parameter name="readonly">false</parameter>
+												<parameter name="adminonly">false</parameter>
+												<parameter name="required">false</parameter>
+												<parameter name="default">false</parameter>
+												<parameter name="widget">Cosmos.SP.form.Bool</parameter>
+												<parameter name="requirements"/>
+											</editinginfo>
+										</bool>
+										<bool inherited="false" label="" name="isCatchup" visualindex="2">
+											<value>false</value>
+											<editinginfo>
+												<parameter name="description">Catchup</parameter>
+												<parameter name="outline">false</parameter>
+												<parameter name="visible">true</parameter>
+												<parameter name="readonly">false</parameter>
+												<parameter name="adminonly">false</parameter>
+												<parameter name="required">false</parameter>
+												<parameter name="default">false</parameter>
+												<parameter name="widget">Cosmos.SP.form.Bool</parameter>
+												<parameter name="requirements"/>
+											</editinginfo>
+										</bool>
+										<bool inherited="false" label="" name="isTimeshift" visualindex="3">
+											<value>false</value>
+											<editinginfo>
+												<parameter name="description">Timeshift</parameter>
+												<parameter name="outline">false</parameter>
+												<parameter name="visible">true</parameter>
+												<parameter name="readonly">false</parameter>
+												<parameter name="adminonly">false</parameter>
+												<parameter name="required">false</parameter>
+												<parameter name="default">false</parameter>
+												<parameter name="widget">Cosmos.SP.form.Bool</parameter>
+												<parameter name="requirements"/>
+											</editinginfo>
+										</bool>
+									</definition>
+								</group>
+								<bool inherited="false" label="" name="deleted" visualindex="5">
+									<value>false</value>
+									<editinginfo>
+										<parameter name="description">Cancellato</parameter>
+										<parameter name="outline">false</parameter>
+										<parameter name="visible">true</parameter>
+										<parameter name="readonly">true</parameter>
+										<parameter name="adminonly">false</parameter>
+										<parameter name="required">false</parameter>
+										<parameter name="default">false</parameter>
+										<parameter name="widget">Cosmos.SP.form.Bool</parameter>
+										<parameter name="requirements"/>
+									</editinginfo>
+								</bool>
+							</definition>
+						</group>
+					</epgListItem><?xml version="1.0" encoding="UTF-8"?><epgListItem id="2">
+						<group inherited="false" label="" name="itemEvent" ro="false" template="EpgEvent" visualindex="0">
+							<editinginfo>
+								<parameter name="outline">false</parameter>
+								<parameter name="visible">true</parameter>
+								<parameter name="adminonly">false</parameter>
+								<parameter name="renderastab">false</parameter>
+								<parameter name="widget">Cosmos.SP.form.Group</parameter>
+								<parameter name="transparent">true</parameter>
+								<parameter name="direction">vertical</parameter>
+								<parameter name="description"/>
+								<parameter name="readonly">false</parameter>
+							</editinginfo>
+							<definition>
+								<group inherited="false" label="" name="group_id" ro="false" visualindex="0">
+									<editinginfo>
+										<parameter name="outline">false</parameter>
+										<parameter name="visible">true</parameter>
+										<parameter name="adminonly">false</parameter>
+										<parameter name="renderastab">false</parameter>
+										<parameter name="widget">Cosmos.SP.form.Group</parameter>
+										<parameter name="transparent">true</parameter>
+										<parameter name="direction">horizontal</parameter>
+										<parameter name="description"/>
+										<parameter name="readonly">false</parameter>
+									</editinginfo>
+									<definition>
+										<text inherited="false" label="" name="eventId" visualindex="0">
+											<value/>
+											<editinginfo>
+												<parameter name="description">ID Evento</parameter>
+												<parameter name="outline">false</parameter>
+												<parameter name="visible">true</parameter>
+												<parameter name="readonly">true</parameter>
+												<parameter name="adminonly">false</parameter>
+												<parameter name="required">false</parameter>
+												<parameter name="multilingual">false</parameter>
+												<parameter name="textOption">simple</parameter>
+												<parameter name="size">0</parameter>
+												<parameter name="widget">Cosmos.SP.form.Text</parameter>
+												<parameter name="graphicsize">0</parameter>
+												<parameter name="rowsnumber">1</parameter>
+												<parameter name="default"/>
+												<parameter name="enumeration"/>
+												<parameter name="regexp"/>
+												<parameter name="requirements"/>
+											</editinginfo>
+										</text>
+									</definition>
+								</group>
+								<group inherited="false" label="" name="date" ro="false" visualindex="1">
+									<editinginfo>
+										<parameter name="outline">false</parameter>
+										<parameter name="visible">true</parameter>
+										<parameter name="adminonly">false</parameter>
+										<parameter name="renderastab">false</parameter>
+										<parameter name="widget">Cosmos.SP.form.Group</parameter>
+										<parameter name="transparent">true</parameter>
+										<parameter name="direction">horizontal</parameter>
+										<parameter name="description"/>
+										<parameter name="readonly">false</parameter>
+									</editinginfo>
+									<definition>
+										<text inherited="false" label="" name="startTime" visualindex="0">
+											<value>12:00</value>
+											<editinginfo>
+												<parameter name="description">Ora inizio</parameter>
+												<parameter name="requirements">HH:MM</parameter>
+												<parameter name="outline">false</parameter>
+												<parameter name="visible">true</parameter>
+												<parameter name="readonly">false</parameter>
+												<parameter name="adminonly">false</parameter>
+												<parameter name="required">true</parameter>
+												<parameter name="multilingual">false</parameter>
+												<parameter name="textOption">simple</parameter>
+												<parameter name="regexp">^(([0-1]\d{1,1}|[2][0-3]):([0-5]\d{1,1})$)$</parameter>
+												<parameter name="size">0</parameter>
+												<parameter name="widget">Cosmos.SP.form.Text</parameter>
+												<parameter name="graphicsize">0</parameter>
+												<parameter name="rowsnumber">1</parameter>
+												<parameter name="default"/>
+												<parameter name="enumeration"/>
+											</editinginfo>
+										</text>
+										<text inherited="false" label="" name="endTime" visualindex="1">
+											<value>13:00</value>
+											<editinginfo>
+												<parameter name="description">Ora fine</parameter>
+												<parameter name="requirements">HH:MM</parameter>
+												<parameter name="outline">false</parameter>
+												<parameter name="visible">true</parameter>
+												<parameter name="readonly">false</parameter>
+												<parameter name="adminonly">false</parameter>
+												<parameter name="required">true</parameter>
+												<parameter name="multilingual">false</parameter>
+												<parameter name="textOption">simple</parameter>
+												<parameter name="regexp">^(([0-1]\d{1,1}|[2][0-3]):([0-5]\d{1,1})$)$</parameter>
+												<parameter name="size">0</parameter>
+												<parameter name="widget">Cosmos.SP.form.Text</parameter>
+												<parameter name="graphicsize">0</parameter>
+												<parameter name="rowsnumber">1</parameter>
+												<parameter name="default"/>
+												<parameter name="enumeration"/>
+											</editinginfo>
+										</text>
+									</definition>
+								</group>
+								<link hypergraphid="c43f7ccf-f2f9-4122-8ae0-410d2ccab89d" inherited="false" label="" name="epgTitle" to="EpgTitle" visualindex="2">
+									<value descr="" id="5" label="EpgTitle" linkedcontenttype="EpgTitle" newEnabled="true" ref="5" status="saved">
+										<active workflowid="2">
+											<transition category="show" name="preview" output="preview" postaction="none" title="Preview content" visualindex="5"/>
+											<transition category="read" name="view" output="get" postaction="none" title="Open content in viewing mode" visualindex="1"/>
+											<transition category="approvalFlow" name="submit" output="empty" postaction="loadsearchform" title="Submit content for approving" visualindex="6"/>
+											<transition category="edit" name="get" output="get" postaction="none" title="Open content in editing mode" visualindex="2"/>
+											<transition category="store" name="save" output="save" postaction="reload" title="Save content" visualindex="3"/>
+											<transition category="remove" name="delete" output="delete" postaction="loadsearchform" title="Delete content" visualindex="4"/>
+										</active>
+									</value>
+									<editinginfo>
+										<parameter name="description">Epg title</parameter>
+										<parameter name="outline">false</parameter>
+										<parameter name="visible">true</parameter>
+										<parameter name="readonly">false</parameter>
+										<parameter name="adminonly">false</parameter>
+										<parameter name="required">true</parameter>
+										<parameter name="deletepolicy">denydelete</parameter>
+										<parameter name="widget">TIM.EpgTitleLink</parameter>
+										<parameter name="autorefresh">false</parameter>
+										<parameter name="autorefreshtime">0</parameter>
+										<parameter name="shownew">false</parameter>
+										<parameter name="width">0</parameter>
+										<parameter name="longdescription">false</parameter>
+										<parameter name="newEnabled">true</parameter>
+										<parameter name="requirements"/>
+									</editinginfo>
+								</link>
+								<group inherited="false" label="" name="premiereLive" ro="false" visualindex="3">
+									<editinginfo>
+										<parameter name="outline">false</parameter>
+										<parameter name="visible">true</parameter>
+										<parameter name="adminonly">false</parameter>
+										<parameter name="renderastab">false</parameter>
+										<parameter name="widget">Cosmos.SP.form.Group</parameter>
+										<parameter name="transparent">true</parameter>
+										<parameter name="direction">horizontal</parameter>
+										<parameter name="description"/>
+										<parameter name="readonly">false</parameter>
+									</editinginfo>
+									<definition>
+										<bool inherited="false" label="" name="premiereFlag" visualindex="0">
+											<value>false</value>
+											<editinginfo>
+												<parameter name="description">Premiere</parameter>
+												<parameter name="outline">false</parameter>
+												<parameter name="visible">true</parameter>
+												<parameter name="readonly">false</parameter>
+												<parameter name="adminonly">false</parameter>
+												<parameter name="required">false</parameter>
+												<parameter name="default">false</parameter>
+												<parameter name="widget">Cosmos.SP.form.Bool</parameter>
+												<parameter name="requirements"/>
+											</editinginfo>
+										</bool>
+										<bool inherited="false" label="" name="liveFlag" visualindex="1">
+											<value>false</value>
+											<editinginfo>
+												<parameter name="description">Live</parameter>
+												<parameter name="outline">false</parameter>
+												<parameter name="visible">true</parameter>
+												<parameter name="readonly">false</parameter>
+												<parameter name="adminonly">false</parameter>
+												<parameter name="required">false</parameter>
+												<parameter name="default">false</parameter>
+												<parameter name="widget">Cosmos.SP.form.Bool</parameter>
+												<parameter name="requirements"/>
+											</editinginfo>
+										</bool>
+									</definition>
+								</group>
+								<group inherited="false" label="" name="flag" ro="false" visualindex="4">
+									<editinginfo>
+										<parameter name="outline">false</parameter>
+										<parameter name="visible">true</parameter>
+										<parameter name="adminonly">false</parameter>
+										<parameter name="renderastab">false</parameter>
+										<parameter name="widget">Cosmos.SP.form.Group</parameter>
+										<parameter name="transparent">true</parameter>
+										<parameter name="direction">horizontal</parameter>
+										<parameter name="description"/>
+										<parameter name="readonly">false</parameter>
+									</editinginfo>
+									<definition>
+										<bool inherited="false" label="" name="isRecordable" visualindex="0">
+											<value>false</value>
+											<editinginfo>
+												<parameter name="description">Recordable</parameter>
+												<parameter name="outline">false</parameter>
+												<parameter name="visible">true</parameter>
+												<parameter name="readonly">false</parameter>
+												<parameter name="adminonly">false</parameter>
+												<parameter name="required">false</parameter>
+												<parameter name="default">false</parameter>
+												<parameter name="widget">Cosmos.SP.form.Bool</parameter>
+												<parameter name="requirements"/>
+											</editinginfo>
+										</bool>
+										<bool inherited="false" label="" name="isStartover" visualindex="1">
+											<value>false</value>
+											<editinginfo>
+												<parameter name="description">Startover</parameter>
+												<parameter name="outline">false</parameter>
+												<parameter name="visible">true</parameter>
+												<parameter name="readonly">false</parameter>
+												<parameter name="adminonly">false</parameter>
+												<parameter name="required">false</parameter>
+												<parameter name="default">false</parameter>
+												<parameter name="widget">Cosmos.SP.form.Bool</parameter>
+												<parameter name="requirements"/>
+											</editinginfo>
+										</bool>
+										<bool inherited="false" label="" name="isCatchup" visualindex="2">
+											<value>false</value>
+											<editinginfo>
+												<parameter name="description">Catchup</parameter>
+												<parameter name="outline">false</parameter>
+												<parameter name="visible">true</parameter>
+												<parameter name="readonly">false</parameter>
+												<parameter name="adminonly">false</parameter>
+												<parameter name="required">false</parameter>
+												<parameter name="default">false</parameter>
+												<parameter name="widget">Cosmos.SP.form.Bool</parameter>
+												<parameter name="requirements"/>
+											</editinginfo>
+										</bool>
+										<bool inherited="false" label="" name="isTimeshift" visualindex="3">
+											<value>false</value>
+											<editinginfo>
+												<parameter name="description">Timeshift</parameter>
+												<parameter name="outline">false</parameter>
+												<parameter name="visible">true</parameter>
+												<parameter name="readonly">false</parameter>
+												<parameter name="adminonly">false</parameter>
+												<parameter name="required">false</parameter>
+												<parameter name="default">false</parameter>
+												<parameter name="widget">Cosmos.SP.form.Bool</parameter>
+												<parameter name="requirements"/>
+											</editinginfo>
+										</bool>
+									</definition>
+								</group>
+								<bool inherited="false" label="" name="deleted" visualindex="5">
+									<value>false</value>
+									<editinginfo>
+										<parameter name="description">Cancellato</parameter>
+										<parameter name="outline">false</parameter>
+										<parameter name="visible">true</parameter>
+										<parameter name="readonly">true</parameter>
+										<parameter name="adminonly">false</parameter>
+										<parameter name="required">false</parameter>
+										<parameter name="default">false</parameter>
+										<parameter name="widget">Cosmos.SP.form.Bool</parameter>
+										<parameter name="requirements"/>
+									</editinginfo>
+								</bool>
+							</definition>
+						</group>
+					</epgListItem><?xml version="1.0" encoding="UTF-8"?><epgListItem id="3">
+						<group inherited="false" label="" name="itemEvent" ro="false" template="EpgEvent" visualindex="0">
+							<editinginfo>
+								<parameter name="outline">false</parameter>
+								<parameter name="visible">true</parameter>
+								<parameter name="adminonly">false</parameter>
+								<parameter name="renderastab">false</parameter>
+								<parameter name="widget">Cosmos.SP.form.Group</parameter>
+								<parameter name="transparent">true</parameter>
+								<parameter name="direction">vertical</parameter>
+								<parameter name="description"/>
+								<parameter name="readonly">false</parameter>
+							</editinginfo>
+							<definition>
+								<group inherited="false" label="" name="group_id" ro="false" visualindex="0">
+									<editinginfo>
+										<parameter name="outline">false</parameter>
+										<parameter name="visible">true</parameter>
+										<parameter name="adminonly">false</parameter>
+										<parameter name="renderastab">false</parameter>
+										<parameter name="widget">Cosmos.SP.form.Group</parameter>
+										<parameter name="transparent">true</parameter>
+										<parameter name="direction">horizontal</parameter>
+										<parameter name="description"/>
+										<parameter name="readonly">false</parameter>
+									</editinginfo>
+									<definition>
+										<text inherited="false" label="" name="eventId" visualindex="0">
+											<value/>
+											<editinginfo>
+												<parameter name="description">ID Evento</parameter>
+												<parameter name="outline">false</parameter>
+												<parameter name="visible">true</parameter>
+												<parameter name="readonly">true</parameter>
+												<parameter name="adminonly">false</parameter>
+												<parameter name="required">false</parameter>
+												<parameter name="multilingual">false</parameter>
+												<parameter name="textOption">simple</parameter>
+												<parameter name="size">0</parameter>
+												<parameter name="widget">Cosmos.SP.form.Text</parameter>
+												<parameter name="graphicsize">0</parameter>
+												<parameter name="rowsnumber">1</parameter>
+												<parameter name="default"/>
+												<parameter name="enumeration"/>
+												<parameter name="regexp"/>
+												<parameter name="requirements"/>
+											</editinginfo>
+										</text>
+									</definition>
+								</group>
+								<group inherited="false" label="" name="date" ro="false" visualindex="1">
+									<editinginfo>
+										<parameter name="outline">false</parameter>
+										<parameter name="visible">true</parameter>
+										<parameter name="adminonly">false</parameter>
+										<parameter name="renderastab">false</parameter>
+										<parameter name="widget">Cosmos.SP.form.Group</parameter>
+										<parameter name="transparent">true</parameter>
+										<parameter name="direction">horizontal</parameter>
+										<parameter name="description"/>
+										<parameter name="readonly">false</parameter>
+									</editinginfo>
+									<definition>
+										<text inherited="false" label="" name="startTime" visualindex="0">
+											<value>22:00</value>
+											<editinginfo>
+												<parameter name="description">Ora inizio</parameter>
+												<parameter name="requirements">HH:MM</parameter>
+												<parameter name="outline">false</parameter>
+												<parameter name="visible">true</parameter>
+												<parameter name="readonly">false</parameter>
+												<parameter name="adminonly">false</parameter>
+												<parameter name="required">true</parameter>
+												<parameter name="multilingual">false</parameter>
+												<parameter name="textOption">simple</parameter>
+												<parameter name="regexp">^(([0-1]\d{1,1}|[2][0-3]):([0-5]\d{1,1})$)$</parameter>
+												<parameter name="size">0</parameter>
+												<parameter name="widget">Cosmos.SP.form.Text</parameter>
+												<parameter name="graphicsize">0</parameter>
+												<parameter name="rowsnumber">1</parameter>
+												<parameter name="default"/>
+												<parameter name="enumeration"/>
+											</editinginfo>
+										</text>
+										<text inherited="false" label="" name="endTime" visualindex="1">
+											<value>22:30</value>
+											<editinginfo>
+												<parameter name="description">Ora fine</parameter>
+												<parameter name="requirements">HH:MM</parameter>
+												<parameter name="outline">false</parameter>
+												<parameter name="visible">true</parameter>
+												<parameter name="readonly">false</parameter>
+												<parameter name="adminonly">false</parameter>
+												<parameter name="required">true</parameter>
+												<parameter name="multilingual">false</parameter>
+												<parameter name="textOption">simple</parameter>
+												<parameter name="regexp">^(([0-1]\d{1,1}|[2][0-3]):([0-5]\d{1,1})$)$</parameter>
+												<parameter name="size">0</parameter>
+												<parameter name="widget">Cosmos.SP.form.Text</parameter>
+												<parameter name="graphicsize">0</parameter>
+												<parameter name="rowsnumber">1</parameter>
+												<parameter name="default"/>
+												<parameter name="enumeration"/>
+											</editinginfo>
+										</text>
+									</definition>
+								</group>
+								<link hypergraphid="c43f7ccf-f2f9-4122-8ae0-410d2ccab89d" inherited="false" label="" name="epgTitle" to="EpgTitle" visualindex="2">
+									<value descr="" id="10" label="EpgTitle" linkedcontenttype="EpgTitle" newEnabled="true" ref="10" status="saved">
+										<active workflowid="2">
+											<transition category="show" name="preview" output="preview" postaction="none" title="Preview content" visualindex="5"/>
+											<transition category="read" name="view" output="get" postaction="none" title="Open content in viewing mode" visualindex="1"/>
+											<transition category="approvalFlow" name="submit" output="empty" postaction="loadsearchform" title="Submit content for approving" visualindex="6"/>
+											<transition category="edit" name="get" output="get" postaction="none" title="Open content in editing mode" visualindex="2"/>
+											<transition category="store" name="save" output="save" postaction="reload" title="Save content" visualindex="3"/>
+											<transition category="remove" name="delete" output="delete" postaction="loadsearchform" title="Delete content" visualindex="4"/>
+										</active>
+									</value>
+									<editinginfo>
+										<parameter name="description">Epg title</parameter>
+										<parameter name="outline">false</parameter>
+										<parameter name="visible">true</parameter>
+										<parameter name="readonly">false</parameter>
+										<parameter name="adminonly">false</parameter>
+										<parameter name="required">true</parameter>
+										<parameter name="deletepolicy">denydelete</parameter>
+										<parameter name="widget">TIM.EpgTitleLink</parameter>
+										<parameter name="autorefresh">false</parameter>
+										<parameter name="autorefreshtime">0</parameter>
+										<parameter name="shownew">false</parameter>
+										<parameter name="width">0</parameter>
+										<parameter name="longdescription">false</parameter>
+										<parameter name="newEnabled">true</parameter>
+										<parameter name="requirements"/>
+									</editinginfo>
+								</link>
+								<group inherited="false" label="" name="premiereLive" ro="false" visualindex="3">
+									<editinginfo>
+										<parameter name="outline">false</parameter>
+										<parameter name="visible">true</parameter>
+										<parameter name="adminonly">false</parameter>
+										<parameter name="renderastab">false</parameter>
+										<parameter name="widget">Cosmos.SP.form.Group</parameter>
+										<parameter name="transparent">true</parameter>
+										<parameter name="direction">horizontal</parameter>
+										<parameter name="description"/>
+										<parameter name="readonly">false</parameter>
+									</editinginfo>
+									<definition>
+										<bool inherited="false" label="" name="premiereFlag" visualindex="0">
+											<value>false</value>
+											<editinginfo>
+												<parameter name="description">Premiere</parameter>
+												<parameter name="outline">false</parameter>
+												<parameter name="visible">true</parameter>
+												<parameter name="readonly">false</parameter>
+												<parameter name="adminonly">false</parameter>
+												<parameter name="required">false</parameter>
+												<parameter name="default">false</parameter>
+												<parameter name="widget">Cosmos.SP.form.Bool</parameter>
+												<parameter name="requirements"/>
+											</editinginfo>
+										</bool>
+										<bool inherited="false" label="" name="liveFlag" visualindex="1">
+											<value>false</value>
+											<editinginfo>
+												<parameter name="description">Live</parameter>
+												<parameter name="outline">false</parameter>
+												<parameter name="visible">true</parameter>
+												<parameter name="readonly">false</parameter>
+												<parameter name="adminonly">false</parameter>
+												<parameter name="required">false</parameter>
+												<parameter name="default">false</parameter>
+												<parameter name="widget">Cosmos.SP.form.Bool</parameter>
+												<parameter name="requirements"/>
+											</editinginfo>
+										</bool>
+									</definition>
+								</group>
+								<group inherited="false" label="" name="flag" ro="false" visualindex="4">
+									<editinginfo>
+										<parameter name="outline">false</parameter>
+										<parameter name="visible">true</parameter>
+										<parameter name="adminonly">false</parameter>
+										<parameter name="renderastab">false</parameter>
+										<parameter name="widget">Cosmos.SP.form.Group</parameter>
+										<parameter name="transparent">true</parameter>
+										<parameter name="direction">horizontal</parameter>
+										<parameter name="description"/>
+										<parameter name="readonly">false</parameter>
+									</editinginfo>
+									<definition>
+										<bool inherited="false" label="" name="isRecordable" visualindex="0">
+											<value>false</value>
+											<editinginfo>
+												<parameter name="description">Recordable</parameter>
+												<parameter name="outline">false</parameter>
+												<parameter name="visible">true</parameter>
+												<parameter name="readonly">false</parameter>
+												<parameter name="adminonly">false</parameter>
+												<parameter name="required">false</parameter>
+												<parameter name="default">false</parameter>
+												<parameter name="widget">Cosmos.SP.form.Bool</parameter>
+												<parameter name="requirements"/>
+											</editinginfo>
+										</bool>
+										<bool inherited="false" label="" name="isStartover" visualindex="1">
+											<value>false</value>
+											<editinginfo>
+												<parameter name="description">Startover</parameter>
+												<parameter name="outline">false</parameter>
+												<parameter name="visible">true</parameter>
+												<parameter name="readonly">false</parameter>
+												<parameter name="adminonly">false</parameter>
+												<parameter name="required">false</parameter>
+												<parameter name="default">false</parameter>
+												<parameter name="widget">Cosmos.SP.form.Bool</parameter>
+												<parameter name="requirements"/>
+											</editinginfo>
+										</bool>
+										<bool inherited="false" label="" name="isCatchup" visualindex="2">
+											<value>false</value>
+											<editinginfo>
+												<parameter name="description">Catchup</parameter>
+												<parameter name="outline">false</parameter>
+												<parameter name="visible">true</parameter>
+												<parameter name="readonly">false</parameter>
+												<parameter name="adminonly">false</parameter>
+												<parameter name="required">false</parameter>
+												<parameter name="default">false</parameter>
+												<parameter name="widget">Cosmos.SP.form.Bool</parameter>
+												<parameter name="requirements"/>
+											</editinginfo>
+										</bool>
+										<bool inherited="false" label="" name="isTimeshift" visualindex="3">
+											<value>false</value>
+											<editinginfo>
+												<parameter name="description">Timeshift</parameter>
+												<parameter name="outline">false</parameter>
+												<parameter name="visible">true</parameter>
+												<parameter name="readonly">false</parameter>
+												<parameter name="adminonly">false</parameter>
+												<parameter name="required">false</parameter>
+												<parameter name="default">false</parameter>
+												<parameter name="widget">Cosmos.SP.form.Bool</parameter>
+												<parameter name="requirements"/>
+											</editinginfo>
+										</bool>
+									</definition>
+								</group>
+								<bool inherited="false" label="" name="deleted" visualindex="5">
+									<value>false</value>
+									<editinginfo>
+										<parameter name="description">Cancellato</parameter>
+										<parameter name="outline">false</parameter>
+										<parameter name="visible">true</parameter>
+										<parameter name="readonly">true</parameter>
+										<parameter name="adminonly">false</parameter>
+										<parameter name="required">false</parameter>
+										<parameter name="default">false</parameter>
+										<parameter name="widget">Cosmos.SP.form.Bool</parameter>
+										<parameter name="requirements"/>
+									</editinginfo>
+								</bool>
+							</definition>
+						</group>
+					</epgListItem><?xml version="1.0" encoding="UTF-8"?><epgListItem id="4">
+						<group inherited="false" label="" name="itemEvent" ro="false" template="EpgEvent" visualindex="0">
+							<editinginfo>
+								<parameter name="outline">false</parameter>
+								<parameter name="visible">true</parameter>
+								<parameter name="adminonly">false</parameter>
+								<parameter name="renderastab">false</parameter>
+								<parameter name="widget">Cosmos.SP.form.Group</parameter>
+								<parameter name="transparent">true</parameter>
+								<parameter name="direction">vertical</parameter>
+								<parameter name="description"/>
+								<parameter name="readonly">false</parameter>
+							</editinginfo>
+							<definition>
+								<group inherited="false" label="" name="group_id" ro="false" visualindex="0">
+									<editinginfo>
+										<parameter name="outline">false</parameter>
+										<parameter name="visible">true</parameter>
+										<parameter name="adminonly">false</parameter>
+										<parameter name="renderastab">false</parameter>
+										<parameter name="widget">Cosmos.SP.form.Group</parameter>
+										<parameter name="transparent">true</parameter>
+										<parameter name="direction">horizontal</parameter>
+										<parameter name="description"/>
+										<parameter name="readonly">false</parameter>
+									</editinginfo>
+									<definition>
+										<text inherited="false" label="" name="eventId" visualindex="0">
+											<value/>
+											<editinginfo>
+												<parameter name="description">ID Evento</parameter>
+												<parameter name="outline">false</parameter>
+												<parameter name="visible">true</parameter>
+												<parameter name="readonly">true</parameter>
+												<parameter name="adminonly">false</parameter>
+												<parameter name="required">false</parameter>
+												<parameter name="multilingual">false</parameter>
+												<parameter name="textOption">simple</parameter>
+												<parameter name="size">0</parameter>
+												<parameter name="widget">Cosmos.SP.form.Text</parameter>
+												<parameter name="graphicsize">0</parameter>
+												<parameter name="rowsnumber">1</parameter>
+												<parameter name="default"/>
+												<parameter name="enumeration"/>
+												<parameter name="regexp"/>
+												<parameter name="requirements"/>
+											</editinginfo>
+										</text>
+									</definition>
+								</group>
+								<group inherited="false" label="" name="date" ro="false" visualindex="1">
+									<editinginfo>
+										<parameter name="outline">false</parameter>
+										<parameter name="visible">true</parameter>
+										<parameter name="adminonly">false</parameter>
+										<parameter name="renderastab">false</parameter>
+										<parameter name="widget">Cosmos.SP.form.Group</parameter>
+										<parameter name="transparent">true</parameter>
+										<parameter name="direction">horizontal</parameter>
+										<parameter name="description"/>
+										<parameter name="readonly">false</parameter>
+									</editinginfo>
+									<definition>
+										<text inherited="false" label="" name="startTime" visualindex="0">
+											<value>09:00</value>
+											<editinginfo>
+												<parameter name="description">Ora inizio</parameter>
+												<parameter name="requirements">HH:MM</parameter>
+												<parameter name="outline">false</parameter>
+												<parameter name="visible">true</parameter>
+												<parameter name="readonly">false</parameter>
+												<parameter name="adminonly">false</parameter>
+												<parameter name="required">true</parameter>
+												<parameter name="multilingual">false</parameter>
+												<parameter name="textOption">simple</parameter>
+												<parameter name="regexp">^(([0-1]\d{1,1}|[2][0-3]):([0-5]\d{1,1})$)$</parameter>
+												<parameter name="size">0</parameter>
+												<parameter name="widget">Cosmos.SP.form.Text</parameter>
+												<parameter name="graphicsize">0</parameter>
+												<parameter name="rowsnumber">1</parameter>
+												<parameter name="default"/>
+												<parameter name="enumeration"/>
+											</editinginfo>
+										</text>
+										<text inherited="false" label="" name="endTime" visualindex="1">
+											<value>10:00</value>
+											<editinginfo>
+												<parameter name="description">Ora fine</parameter>
+												<parameter name="requirements">HH:MM</parameter>
+												<parameter name="outline">false</parameter>
+												<parameter name="visible">true</parameter>
+												<parameter name="readonly">false</parameter>
+												<parameter name="adminonly">false</parameter>
+												<parameter name="required">true</parameter>
+												<parameter name="multilingual">false</parameter>
+												<parameter name="textOption">simple</parameter>
+												<parameter name="regexp">^(([0-1]\d{1,1}|[2][0-3]):([0-5]\d{1,1})$)$</parameter>
+												<parameter name="size">0</parameter>
+												<parameter name="widget">Cosmos.SP.form.Text</parameter>
+												<parameter name="graphicsize">0</parameter>
+												<parameter name="rowsnumber">1</parameter>
+												<parameter name="default"/>
+												<parameter name="enumeration"/>
+											</editinginfo>
+										</text>
+									</definition>
+								</group>
+								<link hypergraphid="c43f7ccf-f2f9-4122-8ae0-410d2ccab89d" inherited="false" label="" name="epgTitle" to="EpgTitle" visualindex="2">
+									<value descr="" id="9" label="EpgTitle" linkedcontenttype="EpgTitle" newEnabled="true" ref="9" status="saved">
+										<active workflowid="2">
+											<transition category="show" name="preview" output="preview" postaction="none" title="Preview content" visualindex="5"/>
+											<transition category="read" name="view" output="get" postaction="none" title="Open content in viewing mode" visualindex="1"/>
+											<transition category="approvalFlow" name="submit" output="empty" postaction="loadsearchform" title="Submit content for approving" visualindex="6"/>
+											<transition category="edit" name="get" output="get" postaction="none" title="Open content in editing mode" visualindex="2"/>
+											<transition category="store" name="save" output="save" postaction="reload" title="Save content" visualindex="3"/>
+											<transition category="remove" name="delete" output="delete" postaction="loadsearchform" title="Delete content" visualindex="4"/>
+										</active>
+									</value>
+									<editinginfo>
+										<parameter name="description">Epg title</parameter>
+										<parameter name="outline">false</parameter>
+										<parameter name="visible">true</parameter>
+										<parameter name="readonly">false</parameter>
+										<parameter name="adminonly">false</parameter>
+										<parameter name="required">true</parameter>
+										<parameter name="deletepolicy">denydelete</parameter>
+										<parameter name="widget">TIM.EpgTitleLink</parameter>
+										<parameter name="autorefresh">false</parameter>
+										<parameter name="autorefreshtime">0</parameter>
+										<parameter name="shownew">false</parameter>
+										<parameter name="width">0</parameter>
+										<parameter name="longdescription">false</parameter>
+										<parameter name="newEnabled">true</parameter>
+										<parameter name="requirements"/>
+									</editinginfo>
+								</link>
+								<group inherited="false" label="" name="premiereLive" ro="false" visualindex="3">
+									<editinginfo>
+										<parameter name="outline">false</parameter>
+										<parameter name="visible">true</parameter>
+										<parameter name="adminonly">false</parameter>
+										<parameter name="renderastab">false</parameter>
+										<parameter name="widget">Cosmos.SP.form.Group</parameter>
+										<parameter name="transparent">true</parameter>
+										<parameter name="direction">horizontal</parameter>
+										<parameter name="description"/>
+										<parameter name="readonly">false</parameter>
+									</editinginfo>
+									<definition>
+										<bool inherited="false" label="" name="premiereFlag" visualindex="0">
+											<value>false</value>
+											<editinginfo>
+												<parameter name="description">Premiere</parameter>
+												<parameter name="outline">false</parameter>
+												<parameter name="visible">true</parameter>
+												<parameter name="readonly">false</parameter>
+												<parameter name="adminonly">false</parameter>
+												<parameter name="required">false</parameter>
+												<parameter name="default">false</parameter>
+												<parameter name="widget">Cosmos.SP.form.Bool</parameter>
+												<parameter name="requirements"/>
+											</editinginfo>
+										</bool>
+										<bool inherited="false" label="" name="liveFlag" visualindex="1">
+											<value>false</value>
+											<editinginfo>
+												<parameter name="description">Live</parameter>
+												<parameter name="outline">false</parameter>
+												<parameter name="visible">true</parameter>
+												<parameter name="readonly">false</parameter>
+												<parameter name="adminonly">false</parameter>
+												<parameter name="required">false</parameter>
+												<parameter name="default">false</parameter>
+												<parameter name="widget">Cosmos.SP.form.Bool</parameter>
+												<parameter name="requirements"/>
+											</editinginfo>
+										</bool>
+									</definition>
+								</group>
+								<group inherited="false" label="" name="flag" ro="false" visualindex="4">
+									<editinginfo>
+										<parameter name="outline">false</parameter>
+										<parameter name="visible">true</parameter>
+										<parameter name="adminonly">false</parameter>
+										<parameter name="renderastab">false</parameter>
+										<parameter name="widget">Cosmos.SP.form.Group</parameter>
+										<parameter name="transparent">true</parameter>
+										<parameter name="direction">horizontal</parameter>
+										<parameter name="description"/>
+										<parameter name="readonly">false</parameter>
+									</editinginfo>
+									<definition>
+										<bool inherited="false" label="" name="isRecordable" visualindex="0">
+											<value>false</value>
+											<editinginfo>
+												<parameter name="description">Recordable</parameter>
+												<parameter name="outline">false</parameter>
+												<parameter name="visible">true</parameter>
+												<parameter name="readonly">false</parameter>
+												<parameter name="adminonly">false</parameter>
+												<parameter name="required">false</parameter>
+												<parameter name="default">false</parameter>
+												<parameter name="widget">Cosmos.SP.form.Bool</parameter>
+												<parameter name="requirements"/>
+											</editinginfo>
+										</bool>
+										<bool inherited="false" label="" name="isStartover" visualindex="1">
+											<value>false</value>
+											<editinginfo>
+												<parameter name="description">Startover</parameter>
+												<parameter name="outline">false</parameter>
+												<parameter name="visible">true</parameter>
+												<parameter name="readonly">false</parameter>
+												<parameter name="adminonly">false</parameter>
+												<parameter name="required">false</parameter>
+												<parameter name="default">false</parameter>
+												<parameter name="widget">Cosmos.SP.form.Bool</parameter>
+												<parameter name="requirements"/>
+											</editinginfo>
+										</bool>
+										<bool inherited="false" label="" name="isCatchup" visualindex="2">
+											<value>false</value>
+											<editinginfo>
+												<parameter name="description">Catchup</parameter>
+												<parameter name="outline">false</parameter>
+												<parameter name="visible">true</parameter>
+												<parameter name="readonly">false</parameter>
+												<parameter name="adminonly">false</parameter>
+												<parameter name="required">false</parameter>
+												<parameter name="default">false</parameter>
+												<parameter name="widget">Cosmos.SP.form.Bool</parameter>
+												<parameter name="requirements"/>
+											</editinginfo>
+										</bool>
+										<bool inherited="false" label="" name="isTimeshift" visualindex="3">
+											<value>false</value>
+											<editinginfo>
+												<parameter name="description">Timeshift</parameter>
+												<parameter name="outline">false</parameter>
+												<parameter name="visible">true</parameter>
+												<parameter name="readonly">false</parameter>
+												<parameter name="adminonly">false</parameter>
+												<parameter name="required">false</parameter>
+												<parameter name="default">false</parameter>
+												<parameter name="widget">Cosmos.SP.form.Bool</parameter>
+												<parameter name="requirements"/>
+											</editinginfo>
+										</bool>
+									</definition>
+								</group>
+								<bool inherited="false" label="" name="deleted" visualindex="5">
+									<value>false</value>
+									<editinginfo>
+										<parameter name="description">Cancellato</parameter>
+										<parameter name="outline">false</parameter>
+										<parameter name="visible">true</parameter>
+										<parameter name="readonly">true</parameter>
+										<parameter name="adminonly">false</parameter>
+										<parameter name="required">false</parameter>
+										<parameter name="default">false</parameter>
+										<parameter name="widget">Cosmos.SP.form.Bool</parameter>
+										<parameter name="requirements"/>
+									</editinginfo>
+								</bool>
+							</definition>
+						</group>
+					</epgListItem>

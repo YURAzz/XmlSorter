@@ -1,6 +1,9 @@
 import java.io.IOException;
 import java.util.HashMap;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
+
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -44,7 +47,6 @@ public class App {
 
     public static NodeList eventSort(Document doc) {
  
-
         //nodeList containing all epgListItems 
         XPath xPath = XPathFactory.newInstance().newXPath();
         String path = "//list[@name='eventList']/value/epgListItem";
@@ -52,7 +54,6 @@ public class App {
 
         try {
             nodelist = (NodeList) xPath.compile(path).evaluate(doc, XPathConstants.NODESET);
-            nodelist.getLength();
 
         } catch (XPathExpressionException e) {
             e.printStackTrace();
@@ -62,62 +63,53 @@ public class App {
         HashMap hashmap/*String, Node*/ = new HashMap();
         String k = null;
         String var = "/content/group/definition/list/value/epgListItem/group/definition/group/definition/text[@name='startTime']/value";
-        NodeList nodelist2 = null;
         String currentEvent = null;
-    
-     //node to string, change nodelist.item
+        NodeList nodelist2 = null;
+        StringWriter sw = new StringWriter();
+        String mela = null;
+        
+        try{
             
-     try{
-        
 
+            Transformer serializer;
+            serializer = TransformerFactory.newInstance().newTransformer();
 
-
-
-
-
-
-
-            int j = 0;
+            //getting epg nodes
             nodelist2 = (NodeList) xPath.compile(var).evaluate(doc, XPathConstants.NODESET);
-            for(int i = 0; i<nodelist2.getLength();i++){
 
+            for(int i = 0; i<nodelist.getLength();i++){
 
-
-                StringWriter sw = new StringWriter();
-                Transformer serializer = TransformerFactory.newInstance().newTransformer();
-                try {
+                    //nodes to text
                     serializer.transform(new DOMSource(nodelist.item(i)), new StreamResult(sw));
-                } catch (TransformerException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
-                currentEvent = sw.toString();
-        
+                    currentEvent = sw.toString();
+                    k = nodelist2.item(i).getTextContent();
 
-
-
-
-                k = nodelist2.item(i).getTextContent();
                 hashmap.put(k,currentEvent);
-                System.out.println(hashmap);
-                j++;
+
             }
 
-        } catch (XPathExpressionException e) {
-            e.printStackTrace();
-        } catch (TransformerConfigurationException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        } catch (TransformerFactoryConfigurationError e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+
+            File file = new File("HashMapTest.xml");
+  
+            BufferedWriter bf = null;
+                bf = new BufferedWriter(new FileWriter(file));
+
+                bf.write(currentEvent);
+
+                bf.flush();
+            }
+            catch (IOException | XPathExpressionException |TransformerException |TransformerFactoryConfigurationError e) {
+                e.printStackTrace();
+            }
+
+
+
+
 
             /*
             node count
             System.out.println(nodelist.getLength()); 
 
-            
             //node to string, change nodelist.item
             
             try{
@@ -129,6 +121,26 @@ public class App {
             System.out.println(result);
             }catch{TransformerException e}
 
+            //something
+            
+            FileWriter myWriter= null;
+            try {
+                myWriter = new FileWriter("HashMapTest.txt");
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+
+            for(int u=0; u<hashmap.size(); u++){
+            try {
+                String str = hashmap.toString();
+                System.out.println(str);
+                myWriter.write(str);
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            }
 
              */
     
