@@ -12,6 +12,9 @@ import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
+
+import org.apache.xpath.CachedXPathAPI;
+import org.apache.xpath.XPathAPI;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -47,17 +50,19 @@ public class App {
         // nodeList containing all epgListItems
         XPath xPath = XPathFactory.newInstance().newXPath();
         String path = "//list[@name='eventList']/value/epgListItem";
-        NodeList nodelist = null;
+        NodeList nodelist3 = null;
+        CachedXPathAPI v = new CachedXPathAPI();
 
         try {
-            nodelist = (NodeList) xPath.compile(path).evaluate(doc, XPathConstants.NODESET);
-        } catch (XPathExpressionException e) {
+            nodelist3 = v.selectNodeList(doc, path);
+        } catch (TransformerException e) {
+            // TODO Auto-generated catch block
             e.printStackTrace();
         }
 
         String k = null;
         String var = "/content/group/definition/list/value/epgListItem/group/definition/group/definition/text[@name='startTime']/value";
-        String currentEvent = null;
+        Node currentEvent = null;
         NodeList nodelist2 = null;
         StringWriter sw = new StringWriter();
         TreeMap treemap = new TreeMap();
@@ -70,32 +75,24 @@ public class App {
             serializer = TransformerFactory.newInstance().newTransformer();
 
             // getting epg nodes
-            nodelist2 = (NodeList) xPath.compile(var).evaluate(doc, XPathConstants.NODESET);
+            nodelist2 = v.selectNodeList(doc, var);
 
-            for (int i = 0; i < nodelist.getLength(); i++) {
+            for (int i = 0; i < nodelist3.getLength(); i++) {
 
                 // nodes to text
-                serializer.transform(new DOMSource(nodelist.item(i)), new StreamResult(sw));
-                currentEvent = sw.toString();
+                serializer.transform(new DOMSource(nodelist3.item(i)), new StreamResult(sw));
+                currentEvent = nodelist3.item(i);
                 k = nodelist2.item(i).getTextContent();
                 array.add(k);
-
-                currentEvent = currentEvent.substring(currentEvent.indexOf('\n') + 1);
-
-                if (u) {
-                    currentEvent = "                    <epgListItem id=\"" + i + "\">\n" + currentEvent;
-                    u = false;
-                } else
-                    currentEvent = "<epgListItem id=\"" + i + "\">\n" + currentEvent;
-
                 treemap.put(k, currentEvent);
+                System.out.println(treemap);
 
                 currentEvent = null;
                 sw = null;
                 sw = new StringWriter();
 
             }
-        } catch (XPathExpressionException | TransformerException | TransformerFactoryConfigurationError e) {
+        } catch ( TransformerException | TransformerFactoryConfigurationError e) {
             e.printStackTrace();
         }
 
@@ -117,13 +114,13 @@ public class App {
         for (int i=0; i<nodelist2.getLength();i++){
             
         Node node1 = (Node) treemap.get(array.get(i));
-        finish = doc.replaceChild(nodelist.item(i), node1);
+        finish = doc.replaceChild(nodelist3.item(i), node1);
 
         
         i=0;
-        for (i = 0; i < nodelist.getLength(); i++) {
+        for (i = 0; i < nodelist3.getLength(); i++) {
 
-            Node filter = nodelist.item(i);
+            Node filter = nodelist3.item(i);
             Element value = (Element) filter;
             value.setAttribute("id", String.valueOf(i));
 
@@ -152,6 +149,7 @@ public class App {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+
 
         /*
          * node count
