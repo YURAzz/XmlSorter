@@ -38,38 +38,38 @@ public class App {
     public static Document eventSort(Document doc) {
 
         int i = 0;
-        String k = null;
         Node finish = null;
-        Node newNode = null;
         Element value = null;
         Node wholeList = null;
-        NodeList epgList = null;
+        String startTime = null;
+        Node changedNode = null;
         Node currentEvent = null;
-        NodeList nodelist2 = null;
-        TreeMap treemap = new TreeMap();
-        ArrayList treemapKeys = new ArrayList();
+        NodeList epgNodeList = null;
+        Transformer serializer = null;
+        NodeList startTimesList = null;
+        TreeMap treeMap = new TreeMap();
         StringWriter sw = new StringWriter();
+        ArrayList arrayKeys = new ArrayList();
         CachedXPathAPI v = new CachedXPathAPI();
-        String path = "//list[@name='eventList']/value/epgListItem";
-        String var = "/content/group/definition/list/value/epgListItem/group/definition/group/definition/text[@name='startTime']/value";
+        String path = "//list[@name='eventList']/value/epgNodeListItem";
+        String var = "/content/group/definition/list/value/epgNodeListItem/group/definition/group/definition/text[@name='startTime']/value";
 
         try {
-            epgList = v.selectNodeList(doc, path);
-            wholeList = v.selectSingleNode(doc, "//list[@name='eventList']/value");
-            Transformer serializer;
+
+            epgNodeList = v.selectNodeList(doc, path);
+            startTimesList = v.selectNodeList(doc, var);
             serializer = TransformerFactory.newInstance().newTransformer();
-            nodelist2 = v.selectNodeList(doc, var);
+            wholeList = v.selectSingleNode(doc, "//list[@name='eventList']/value");
 
-            // treemap population
-            for (i = 0; i < epgList.getLength(); i++) {
+            // treeMap population
+            for (i = 0; i < epgNodeList.getLength(); i++) {
 
-                serializer.transform(new DOMSource(epgList.item(i)), new StreamResult(sw));
-                currentEvent = epgList.item(i);
-                k = nodelist2.item(i).getTextContent();
-                treemapKeys.add(k);
-                treemap.put(k, currentEvent);
+                serializer.transform(new DOMSource(epgNodeList.item(i)), new StreamResult(sw));
+                currentEvent = epgNodeList.item(i);
+                startTime = startTimesList.item(i).getTextContent();
+                arrayKeys.add(startTime);
+                treeMap.put(startTime, currentEvent);
 
-                sw = null;
                 currentEvent = null;
                 sw = new StringWriter();
             }
@@ -77,21 +77,15 @@ public class App {
             e.printStackTrace();
         }
 
-        treemapKeys.sort(null);
-        i = 0;
-
-        // remove nodes
-        for (i = 0; i < nodelist2.getLength(); i++) {
-            wholeList.removeChild(epgList.item(i));
-        }
+        arrayKeys.sort(null);
 
         // changing id's and replacing
-        for (i = 0; i < nodelist2.getLength(); i++) {
-            newNode = (Node) treemap.get(treemapKeys.get(i));
-            value = (Element) newNode;
+        for (i = 0; i < startTimesList.getLength(); i++) {
+            changedNode = (Node) treeMap.get(arrayKeys.get(i));
+            value = (Element) changedNode;
             value.setAttribute("id", String.valueOf(i));
-            finish = (Node) value;
-            wholeList.appendChild(finish);
+            changedNode = (Node) value;
+            wholeList.replaceChild(changedNode, epgNodeList.item(i));
         }
         return doc;
     }
