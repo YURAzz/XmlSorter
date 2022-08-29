@@ -38,7 +38,6 @@ public class App {
     public static Document eventSort(Document doc) {
 
         int i = 0;
-        Node finish = null;
         Element value = null;
         Node wholeList = null;
         String startTime = null;
@@ -46,18 +45,18 @@ public class App {
         Node currentEvent = null;
         NodeList epgNodeList = null;
         Transformer serializer = null;
-        NodeList startTimesList = null;
+        NodeList startTimeList = null;
         TreeMap treeMap = new TreeMap();
         StringWriter sw = new StringWriter();
         ArrayList arrayKeys = new ArrayList();
         CachedXPathAPI v = new CachedXPathAPI();
-        String path = "//list[@name='eventList']/value/epgNodeListItem";
-        String var = "/content/group/definition/list/value/epgNodeListItem/group/definition/group/definition/text[@name='startTime']/value";
+        String epgNodeVar = "//list[@name='eventList']/value/epgNodeListItem";
+        String startTimeVar = "/content/group/definition/list/value/epgNodeListItem/group/definition/group/definition/text[@name='startTime']/value";
 
         try {
 
-            epgNodeList = v.selectNodeList(doc, path);
-            startTimesList = v.selectNodeList(doc, var);
+            epgNodeList = v.selectNodeList(doc, epgNodeVar);
+            startTimeList = v.selectNodeList(doc, startTimeVar);
             serializer = TransformerFactory.newInstance().newTransformer();
             wholeList = v.selectSingleNode(doc, "//list[@name='eventList']/value");
 
@@ -66,7 +65,7 @@ public class App {
 
                 serializer.transform(new DOMSource(epgNodeList.item(i)), new StreamResult(sw));
                 currentEvent = epgNodeList.item(i);
-                startTime = startTimesList.item(i).getTextContent();
+                startTime = startTimeList.item(i).getTextContent();
                 arrayKeys.add(startTime);
                 treeMap.put(startTime, currentEvent);
 
@@ -80,12 +79,11 @@ public class App {
         arrayKeys.sort(null);
 
         // changing id's and replacing
-        for (i = 0; i < startTimesList.getLength(); i++) {
+        for (i = 0; i < startTimeList.getLength(); i++) {
             changedNode = (Node) treeMap.get(arrayKeys.get(i));
             value = (Element) changedNode;
             value.setAttribute("id", String.valueOf(i));
-            changedNode = (Node) value;
-            wholeList.replaceChild(changedNode, epgNodeList.item(i));
+            wholeList.replaceChild((Node) changedNode, epgNodeList.item(i));
         }
         return doc;
     }
