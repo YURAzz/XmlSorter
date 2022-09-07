@@ -52,17 +52,18 @@ public class App {
         CachedXPathAPI v = new CachedXPathAPI();
         String epgNodeVar = "//list[@name='eventList']/value/epgNodeListItem";
         String startTimeVar = "/content/group/definition/list/value/epgNodeListItem/group/definition/group/definition/text[@name='startTime']/value";
+        String valueVar = "//list[@name='eventList']/value";
 
         try {
 
             epgNodeList = v.selectNodeList(doc, epgNodeVar);
             startTimeList = v.selectNodeList(doc, startTimeVar);
-            serializer = TransformerFactory.newInstance().newTransformer();
-            wholeList = v.selectSingleNode(doc, "//list[@name='eventList']/value");
-
+            wholeList = v.selectSingleNode(doc, valueVar);
+            
             // treeMap population
             for (i = 0; i < epgNodeList.getLength(); i++) {
-
+                
+                serializer = TransformerFactory.newInstance().newTransformer();
                 serializer.transform(new DOMSource(epgNodeList.item(i)), new StreamResult(sw));
                 currentEvent = epgNodeList.item(i);
                 startTime = startTimeList.item(i).getTextContent();
